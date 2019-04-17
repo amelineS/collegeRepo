@@ -1,9 +1,12 @@
 package org.papaCollege.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.papaCollege.dao.IDepartementDAO;
+import org.papaCollege.dao.INoterDAO;
 import org.papaCollege.entities.Departement;
+import org.papaCollege.entities.Enseignant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,8 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class DepartementMetier implements IDepartementMetier {
 
 	@Autowired
-	private IDepartementDAO dao;
-	
+	private IDepartementDAO daoD;
+	@Autowired
+	private INoterDAO daoN;
 
 	
 	public DepartementMetier() {
@@ -22,35 +26,50 @@ public class DepartementMetier implements IDepartementMetier {
 	}
 
 	public void ajouter(Departement t) {
-		// TODO Auto-generated method stub
 		
+		daoD.ajouter(t);
 	}
 
 	public void modifier(Departement t) {
-		// TODO Auto-generated method stub
 		
+		daoD.modifier(t);
 	}
 
 	public void supprimer(Departement t) {
-		// TODO Auto-generated method stub
 		
+		daoD.supprimer(t);
 	}
 
 	public List<Departement> afficher() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return daoD.afficher();
 	}
 
 	public Departement getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return daoD.getById(id);
 	}
 
 	public double getMoyenneParDepartement(int idDepartement) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	
+		Departement dep = daoD.getById(idDepartement);		
+		
+		List <Integer> idMatieres = new ArrayList <Integer> ();
+		double sommeMoyenne = 0;
+		
+		for (Enseignant ens : dep.getEnseignants()) {
+
+			if(ens.getMatiere().getIdMatiere() != 0) {
+				
+				idMatieres.add(ens.getMatiere().getIdMatiere());
+				sommeMoyenne += daoN.getMoyenneParMatiere(ens.getMatiere().getIdMatiere());
+			}	
+		}
+		
+		double moyenneDep = sommeMoyenne/idMatieres.size();
+		System.out.println("Somme finale "+sommeMoyenne+" Nombre final "+idMatieres.size());
+		
+		return moyenneDep;
+	}
 	
 }

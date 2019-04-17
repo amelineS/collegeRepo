@@ -20,42 +20,42 @@ public class EtudiantMetier implements IEtudiantMetier {
 	
 	
 	public EtudiantMetier() {
-
+		
 	}
 
 	public void ajouter(Etudiant t) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouter(t);
 	}
 
 	public void modifier(Etudiant t) {
 		// TODO Auto-generated method stub
-		
+		dao.modifier(t);
 	}
 
 	public void supprimer(Etudiant t) {
 		// TODO Auto-generated method stub
-		
+		dao.supprimer(t);
 	}
 
 	public List<Etudiant> afficher() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.afficher();
 	}
 
 	public Etudiant getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getById(id);
 	}
 
 	public double getMoyenneGenerale(int idEtudiant) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.getMoyenneGenerale(idEtudiant);
 	}
 
 	public List<Matiere> getMatieresSansNote(int idEtudiant) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getMatieresSansNote(idEtudiant);
 	}
 
 	
