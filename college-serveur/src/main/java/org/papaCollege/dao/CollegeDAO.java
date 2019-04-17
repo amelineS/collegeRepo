@@ -14,28 +14,28 @@ public class CollegeDAO implements ICollegeDAO{
 	private SessionFactory sessionFactory;
 
 	public void ajouter(Colleges t) {
-		// TODO Auto-generated method stub
 		
+		sessionFactory.getCurrentSession().merge(t);
 	}
 
 	public void modifier(Colleges t) {
-		// TODO Auto-generated method stub
 		
+		sessionFactory.getCurrentSession().update(t);	
 	}
 
 	public void supprimer(Colleges t) {
-		// TODO Auto-generated method stub
 		
+		sessionFactory.getCurrentSession().delete(t);	
 	}
 
 	public List<Colleges> afficher() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return sessionFactory.getCurrentSession().createQuery("from Colleges c").list();
 	}
 
 	public Colleges getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (Colleges) sessionFactory.getCurrentSession().get(Colleges.class, id);
 	}
 
 
