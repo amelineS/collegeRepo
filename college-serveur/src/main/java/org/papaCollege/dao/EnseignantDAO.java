@@ -17,27 +17,28 @@ public class EnseignantDAO implements IEnseignantDAO{
 
 	public void ajouter(Enseignant t) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().merge(t);
 	}
 
 	public void modifier(Enseignant t) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().update(t);
 	}
 
 	public void supprimer(Enseignant t) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().delete(t);
 	}
 
 	public List<Enseignant> afficher() {
 		// TODO Auto-generated method stub
-		return null;
+		List<Enseignant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +"t").list();
+		return liste;
 	}
 
 	public Enseignant getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return (Enseignant) sessionFactory.getCurrentSession().get(Enseignant.class, id);
 	}
 	
 	
