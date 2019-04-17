@@ -1,5 +1,6 @@
 package org.papaCollege.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.papaCollege.dao.INoterDAO;
@@ -23,32 +24,32 @@ public class NoterMetier implements INoterMetier {
 
 	public void ajouter(Noter t) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouter(t);
 	}
 
 	public void modifier(Noter t) {
 		// TODO Auto-generated method stub
-		
+		dao.modifier(t);
 	}
 
 	public void supprimer(Noter t) {
 		// TODO Auto-generated method stub
-		
+		dao.supprimer(t);
 	}
 
 	public List<Noter> afficher() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.afficher();
 	}
 
 	public Noter getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getById(id);
 	}
 
 	public double getMoyenneParMatiere(int idMatiere) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.getMoyenneParMatiere(idMatiere);
 	}
 
 

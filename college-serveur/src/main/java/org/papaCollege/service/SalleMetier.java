@@ -23,27 +23,28 @@ public class SalleMetier implements IGestionCollegeMetier<Salle> {
 
 	public void ajouter(Salle t) {
 		// TODO Auto-generated method stub
-		
+		dao.ajouter(t);
 	}
 
 	public void modifier(Salle t) {
 		// TODO Auto-generated method stub
-		
+		dao.modifier(t);
+
 	}
 
 	public void supprimer(Salle t) {
 		// TODO Auto-generated method stub
-		
+		dao.supprimer(t);
 	}
 
 	public List<Salle> afficher() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.afficher();
 	}
 
 	public Salle getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getById(id);
 	}
 
 	

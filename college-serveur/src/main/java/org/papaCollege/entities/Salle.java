@@ -42,7 +42,7 @@ public class Salle {
 	}
 	@Override
 	public String toString() {
-		return "Salle [idSalle=" + idSalle + ", nbrPlace=" + nbrPlace + ", matieres=" + matieres + "]";
+		return "Salle [idSalle=" + idSalle + ", nbrPlace=" + nbrPlace + "]";
 	}
 	
 	

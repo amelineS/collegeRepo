@@ -13,35 +13,47 @@ public class NoterDAO implements INoterDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public double getMoyenneParMatiere(int idMatiere) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	public void ajouter(Noter t) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().merge(t);
+
 	}
 
 	public void modifier(Noter t) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().update(t);
+
 	}
 
 	public void supprimer(Noter t) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().delete(t);
+
 	}
 
 	public List<Noter> afficher() {
 		// TODO Auto-generated method stub
-		return null;
+		return sessionFactory.getCurrentSession().createQuery("select t from " + Noter.class.getName() + " t").list();
 	}
 
 	public Noter getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return (Noter) 	sessionFactory.getCurrentSession().get(Noter.class, id);
 	}
 	
 	
+ 	
+	public double getMoyenneParMatiere(int idMatiere) {
+		// TODO Auto-generated method stub
+		List<Double> liste = sessionFactory.getCurrentSession().createQuery(
+				" select avg(note) from Noter n where n.matiere.idMatiere =:id group by n.matiere.idMatiere").setParameter("id", idMatiere).list();
+		
+		return liste.get(0);
+		//Query q=sessionFactory.getCurrentSession().createQuery(" select avg(note) from Noter n where n.matiere.idMatiere =:id group by n.matiere.idMatiere").setParameter("id", idMatiere);
+		
+		//return (double) q.list().get(0);
+		
+	}
 }
