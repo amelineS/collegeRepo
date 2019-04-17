@@ -2,6 +2,7 @@ package org.papaCollege.dao;
 
 import java.util.List;
 
+
 import org.hibernate.SessionFactory;
 import org.papaCollege.entities.Matiere;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,28 +15,26 @@ public class MatiereDAO implements IMatiereDAO {
 	private SessionFactory sessionFactory;
 	
 	public void ajouter(Matiere t) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().merge(t);
 		
 	}
 
 	public void modifier(Matiere t) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().update(t);
 		
 	}
 
 	public void supprimer(Matiere t) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().delete(t);
 		
 	}
 
 	public List<Matiere> afficher() {
-		// TODO Auto-generated method stub
-		return null;
+		return sessionFactory.getCurrentSession().createQuery("from Matiere t").list();
 	}
 
 	public Matiere getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (Matiere) sessionFactory.getCurrentSession().get(Matiere.class, id);
 	}
 
 	
