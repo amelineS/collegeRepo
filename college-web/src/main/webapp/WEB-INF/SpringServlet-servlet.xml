@@ -56,8 +56,8 @@
 	<bean id="daoCollege"  class="org.papaCollege.dao.CollegeDAO" ></bean>
    <bean id="serviceCollege" name="serviceCollege" class="org.papaCollege.service.CollegeMetier" ></bean>
    
-	<bean id="daoEtudiant"  class="org.papaCollege.dao.EtudiantDAO" ></bean>
-   <bean id="serviceEtudiant" name="serviceEtudiant" class="org.papaCollege.service.EtudiantMetier" ></bean>
+	<bean id="daoDepartement"  class="org.papaCollege.dao.DepartementDAO" ></bean>
+   <bean id="serviceDepartement" name="serviceDepartement" class="org.papaCollege.service.DepartementMetier" ></bean>
    
 	<bean id="daoEnseignant"  class="org.papaCollege.dao.EnseignantDAO" ></bean>
    <bean id="serviceEnseignant" name="serviceEnseignant" class="org.papaCollege.service.EnseignantMetier" ></bean>
