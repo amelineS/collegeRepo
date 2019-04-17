@@ -14,28 +14,29 @@ public class MatiereDAO implements IMatiereDAO {
 	private SessionFactory sessionFactory;
 	
 	public void ajouter(Matiere t) {
-		// TODO Auto-generated method stub
+		
+		sessionFactory.getCurrentSession().merge(t);
 		
 	}
 
 	public void modifier(Matiere t) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().merge(t);
 		
 	}
 
 	public void supprimer(Matiere t) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().merge(t);
 		
 	}
 
 	public List<Matiere> afficher() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return sessionFactory.getCurrentSession().createQuery(" from Matiere m ").list();
 	}
 
 	public Matiere getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return (Matiere) sessionFactory.getCurrentSession().get(Matiere.class, id);
 	}
 
 	
