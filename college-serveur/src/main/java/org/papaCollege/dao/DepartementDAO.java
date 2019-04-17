@@ -3,6 +3,7 @@ package org.papaCollege.dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.papaCollege.entities.Colleges;
 import org.papaCollege.entities.Departement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,28 +15,28 @@ public class DepartementDAO implements IDepartementDAO{
 	private SessionFactory sessionFactory;
 
 	public void ajouter(Departement t) {
-		// TODO Auto-generated method stub
 		
+		sessionFactory.getCurrentSession().merge(t);
 	}
 
 	public void modifier(Departement t) {
-		// TODO Auto-generated method stub
 		
+		sessionFactory.getCurrentSession().update(t);
 	}
 
 	public void supprimer(Departement t) {
-		// TODO Auto-generated method stub
 		
+		sessionFactory.getCurrentSession().delete(t);
 	}
 
 	public List<Departement> afficher() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return sessionFactory.getCurrentSession().createQuery("from Departement d").list();
 	}
 
 	public Departement getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return (Departement) sessionFactory.getCurrentSession().get(Departement.class, id);
 	}
 	
 	

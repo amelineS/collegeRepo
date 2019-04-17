@@ -18,8 +18,5 @@ public class App
     	IDepartementMetier serviceD = (IDepartementMetier) ctx.getBean("serviceDepartement");
     	
     	
-    	
-    	
-    	
     }
 }

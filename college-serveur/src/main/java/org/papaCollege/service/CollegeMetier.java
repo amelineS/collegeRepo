@@ -22,28 +22,28 @@ public class CollegeMetier implements IGestionCollegeMetier<Colleges> {
 	}
 
 	public void ajouter(Colleges t) {
-		// TODO Auto-generated method stub
 		
+		dao.ajouter(t);
 	}
 
 	public void modifier(Colleges t) {
-		// TODO Auto-generated method stub
 		
+		dao.modifier(t);
 	}
 
 	public void supprimer(Colleges t) {
-		// TODO Auto-generated method stub
 		
+		dao.supprimer(t);		
 	}
 
 	public List<Colleges> afficher() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return dao.afficher();
 	}
 
 	public Colleges getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return dao.getById(id);
 	}
 
 	
