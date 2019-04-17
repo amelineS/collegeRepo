@@ -15,7 +15,6 @@ public class MatiereDAO implements IMatiereDAO {
 	private SessionFactory sessionFactory;
 	
 	public void ajouter(Matiere t) {
-		//test
 		sessionFactory.getCurrentSession().merge(t);
 		
 	}
