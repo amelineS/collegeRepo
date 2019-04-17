@@ -23,37 +23,33 @@ public class PersonneMetier implements IPersonneMetier {
 	}
 
 	public void ajouter(Personne t) {
-		dao.ajouter(t);
+		// TODO Auto-generated method stub
 		
 	}
 
 	public void modifier(Personne t) {
-		dao.modifier(t);
+		// TODO Auto-generated method stub
 		
 	}
 
 	public void supprimer(Personne t) {
-		dao.supprimer(t);
+		// TODO Auto-generated method stub
 		
 	}
 
 	public List<Personne> afficher() {
-		return dao.afficher();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public Personne getById(int id) {
-		return dao.getById(id);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public FicheSemantique afficherFicheSemantique(int idPersonne) {
-		
-		Personne p =dao.getById(idPersonne);
-		
-		FicheSemantique fs=new FicheSemantique();
-		fs.setPrenom(p.getPrenom());
-		fs.setMail(p.getMail());
-		fs.setTel(p.getTel());
-		return fs;
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

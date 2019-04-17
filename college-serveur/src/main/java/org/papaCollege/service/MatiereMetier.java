@@ -21,26 +21,28 @@ public class MatiereMetier implements IGestionCollegeMetier<Matiere> {
 	}
 
 	public void ajouter(Matiere t) {
-		dao.ajouter(t);
+		// TODO Auto-generated method stub
 		
 	}
 
 	public void modifier(Matiere t) {
-		dao.modifier(t);
+		// TODO Auto-generated method stub
 		
 	}
 
 	public void supprimer(Matiere t) {
-		dao.supprimer(t);
+		// TODO Auto-generated method stub
 		
 	}
 
 	public List<Matiere> afficher() {
-		return dao.afficher();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public Matiere getById(int id) {
-		return dao.getById(id);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
