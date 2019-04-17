@@ -23,6 +23,7 @@ public class MatiereMetier implements IGestionCollegeMetier<Matiere> {
 	public void ajouter(Matiere t) {
 		dao.ajouter(t);
 		
+		
 	}
 
 	public void modifier(Matiere t) {
