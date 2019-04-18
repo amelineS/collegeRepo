@@ -10,6 +10,7 @@ import org.papaCollege.entities.Colleges;
 import org.papaCollege.entities.Departement;
 import org.papaCollege.entities.Enseignant;
 import org.papaCollege.service.IDepartementMetier;
+import org.papaCollege.service.IGestionCollegeMetier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +26,7 @@ public class controllerDepartement {
 	@Autowired
 	private IDepartementMetier serviceDepartement;
 	@Autowired
-	private IGestionCollegeCRUD<Colleges> serviceCollege;
+	IGestionCollegeMetier<Colleges> serviceCollege;
 	@Autowired
 	private IGestionCollegeCRUD<Enseignant> serviceEnseignant;
 	
@@ -34,8 +35,9 @@ public class controllerDepartement {
 		
 		ModelAndView view = new ModelAndView("gestionDepartement","Departement", new Departement());
 		
-		List<Colleges> colleges = serviceCollege.afficher();
-		view.addObject("colleges",colleges);
+List <Colleges> listeColleges = serviceCollege.afficher();
+		
+		view.addObject("colleges", listeColleges);
 		List<Enseignant> responsables =  serviceEnseignant.afficher();
 		view.addObject("responsables",responsables);
 		
