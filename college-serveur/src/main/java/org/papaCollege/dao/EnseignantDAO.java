@@ -1,6 +1,5 @@
 package org.papaCollege.dao;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -42,7 +41,6 @@ public class EnseignantDAO implements IEnseignantDAO{
 		return (Enseignant) sessionFactory.getCurrentSession().get(Enseignant.class, id);
 	}
 	
-
 	
 	
 }
