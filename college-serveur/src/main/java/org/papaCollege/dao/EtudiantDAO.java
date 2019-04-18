@@ -56,7 +56,7 @@ public class EtudiantDAO implements IEtudiantDAO {
 
 	public List<Etudiant> afficher() {
 		// TODO Auto-generated method stub
-		List<Etudiant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +"t").list();
+		List<Etudiant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +" t").list();
 		return liste;
 	}
 

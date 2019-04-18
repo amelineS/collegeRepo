@@ -1,5 +1,6 @@
 package org.papaCollege.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -32,7 +33,7 @@ public class EnseignantDAO implements IEnseignantDAO{
 
 	public List<Enseignant> afficher() {
 		// TODO Auto-generated method stub
-		List<Enseignant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +"t").list();
+		List<Enseignant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +" t").list();
 		return liste;
 	}
 
@@ -41,6 +42,7 @@ public class EnseignantDAO implements IEnseignantDAO{
 		return (Enseignant) sessionFactory.getCurrentSession().get(Enseignant.class, id);
 	}
 	
+
 	
 	
 }
