@@ -30,12 +30,12 @@
 	
 		<form:form modelAttribute="enseignant" action ="/college-web/admin/redirectEnseignant"  style="margin-left:40%">
 			<div class="form-row">
-			<form:input type="hidden" path="idPersonne"/>
+			<form:input required="true" type="hidden" path="idPersonne"/>
 		 		<div class="form-group"  style="width:40%">
 		     		<label for="nom">Nom</label>
 		   		    <form:input path="nom" type="text" class="form-control" id="nom"/>
 	     		</div>
-	     		<div class="form-group" style="width:40%">
+	     		<div  required="true" class="form-group" style="width:40%">
 		     		<label for="prenom">Prénom</label>
 		   		    <form:input path="prenom" type="text" class="form-control" id="prenom"/>
 	     		</div>
@@ -43,29 +43,33 @@
 	     	<div class="form-row"style="width:40%">
 	     		<div class="form-group">
 		     		<label for="mail">Email</label>
-		   		    <form:input path="mail" type="email" class="form-control" id="mail"/>
+		   		    <form:input  required="true" path="mail" type="email" class="form-control" id="mail"/>
 	     		</div>
 		     </div>
 		     	<div class="form-row">
 		     		<div class="form-group" style="width:40%">
 			     		<label for="tel">Téléphone</label>
-			   		    <form:input path="tel" type="text" class="form-control" id="tel"/>
+			   		    <form:input   required="true" path="tel" type="text" class="form-control" id="tel"/>
 		     		</div>
 	     		</div>
 	     		<div class="form-row" style="margin:auto;"> 
 		     		<div class="form-group" style="width:40%">
 			     		<label for="indice">Indice</label>
-			   		    <form:input path="indice" type="number" class="form-control" id="indice"/>
+			   		    <form:input min="1" required="true" path="indice" type="number" class="form-control" id="indice"/>
 			   		    
 		     		</div>
 		     		<div class="form-group" style="width:40% ">
 			     		<label for="tel">Date (aaaa/mm/jj)</label>
-			   		    <form:input path="datePriseFonction" type="text" class="form-control" id="tel"/>
+			   		    <form:input  required="true" path="datePriseFonction" type="text" class="form-control" id="tel"/>
 			   		    	
 		     		</div>
 		     		<div class="form-group"  style="width:40%">
 			     		<label for="dep">Département</label>
-			   		    	<form:select id="dep"  class="form-control col-md-3" path="Departement.idDepartement" items="${departement}"  itemValue="idDepartement" itemLabel="nomDepartement" ></form:select>	
+			   		    	<form:select  required="true" id="dep"  class="form-control col-md-3" path="Departement.idDepartement" items="${departement}"  itemValue="idDepartement" itemLabel="nomDepartement" ></form:select>	
+		     		</div>
+		     		<div class="form-group"  style="width:40%">
+			     		<label for="mat">Matière</label>
+			   		    	<form:select  required="true" id="mat"  class="form-control col-md-3" path="Matiere.idMatiere" items="${listemat}"  itemValue="idMatiere" itemLabel="nom" ></form:select>	
 		     		</div>
 		     	</div><br><br>
 		     	
@@ -96,6 +100,7 @@
 <th scope = "col">Date</th>
 <th scope = "col">Indice</th>
 <th scope = "col">Département</th>
+<th scope = "col">Matière</th>
 <th scope = "col">Modifier</th>
 <th scope = "col">Supprimer</th>
 </tr>
@@ -117,6 +122,7 @@
 					<td>${ens.datePriseFonction}</td>
 					<td>${ens.indice}</td>
 					<td>${ens.departement.nomDepartement}</td>
+					<td>${ens.matiere.nom}</td>
 					<td><a href="modifierEnseignant?id=${ens.idPersonne}"> <i class="glyphicon glyphicon-pencil"></i>   </a></td> 
 					<td><a href="supprimerEnseignant?id=${ens.idPersonne}"><i class="glyphicon glyphicon-trash"></i></a></td>
 
