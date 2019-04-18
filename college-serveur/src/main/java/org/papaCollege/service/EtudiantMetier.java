@@ -1,5 +1,6 @@
 package org.papaCollege.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.papaCollege.dao.IEtudiantDAO;
@@ -56,6 +57,22 @@ public class EtudiantMetier implements IEtudiantMetier {
 	public List<Matiere> getMatieresSansNote(int idEtudiant) {
 		// TODO Auto-generated method stub
 		return dao.getMatieresSansNote(idEtudiant);
+	}
+
+	public List<Etudiant> etudiantAdmis() {
+		// TODO Auto-generated method stub
+		
+	List<Etudiant> liste = new ArrayList<Etudiant>();
+		List<Etudiant> listetuds = dao.afficher();
+		for(Etudiant et : listetuds) {
+			if(dao.getMoyenneGenerale(et.getIdPersonne())>=10){
+				liste.add(et);
+			} 
+
+			return liste;
+		}
+		
+		return null;
 	}
 
 	

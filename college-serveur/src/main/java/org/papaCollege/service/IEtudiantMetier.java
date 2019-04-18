@@ -10,5 +10,6 @@ public interface IEtudiantMetier extends IGestionCollegeMetier<Etudiant>{
 	
 	public double getMoyenneGenerale(int idEtudiant);
 	public List<Matiere> getMatieresSansNote(int idEtudiant);
+	public List<Etudiant> etudiantAdmis();
 
 }

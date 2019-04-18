@@ -22,8 +22,8 @@
 	</div>
 	
 	<div class=pull-right>
-		<button class="btn btn-default" type="submit" style = "margin-top:15%">
-		<i class="glyphicon glyphicon-off"> Déconnexion</i></button>
+		<button class="btn btn-default" type="submit" style = "margin-top:10%">
+		<i class="glyphicon glyphicon-off" style ="font-size:large"> Déconnexion</i></button>
 	</div>
 </nav>
 
@@ -33,22 +33,22 @@
 
 <tr>
 
-<th scope = "col" style="text-align:center; padding:50px; spacing:10px"><i class="glyphicon glyphicon-home"></i><br>
+<th scope = "col" style="text-align:center; padding:50px;font-size:x-large"><i class="glyphicon glyphicon-home"></i><br>
 <a href="<c:url value="/admin/formcollege"/>" >Gestion des collèges</a></th>
-<th scope = "col" style="text-align:center; padding:50px"><i class="glyphicon glyphicon-th-list"></i><br>
+<th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-th-list"></i><br>
 <a href="<c:url value="/admin/Departement"/>" >Gestion des départements</a></th>
-<th scope = "col" style="text-align:center; padding:50px"><i class="glyphicon glyphicon-calendar"></i><br>
+<th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-calendar"></i><br>
 <a href="<c:url value="/admin/formSalle"/>" >Gestion des salles</a></th>
 
 </tr>
 
 <tr>
 
-<th scope = "col" style="text-align:center; padding:50px"><i class="glyphicon glyphicon-user"></i><br>
-<a href="<c:url value="/admin/gestionEnseignant"/>" >Gestion des enseignants</a></th>
-<th scope = "col" style="text-align:center; padding:50px"><i class="glyphicon glyphicon-education"></i><br>
+<th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-user"></i><br>
+<a href="<c:url value="/admin/addEnseignant"/>" >Gestion des enseignants</a></th>
+<th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-education"></i><br>
 <a href="<c:url value="/admin/formEtudiant"/>" >Gestion des étudiants</a></th>
-<th scope = "col" style="text-align:center; padding:50px"><i class="glyphicon glyphicon-th-list"></i><br>
+<th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-th-list"></i><br>
 <a href="<c:url value="/admin/formMatiere"/>" >Gestion des matières</a></th>
 
 </tr>

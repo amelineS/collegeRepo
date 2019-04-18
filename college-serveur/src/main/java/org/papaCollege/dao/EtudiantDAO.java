@@ -56,13 +56,13 @@ public class EtudiantDAO implements IEtudiantDAO {
 
 	public List<Etudiant> afficher() {
 		// TODO Auto-generated method stub
-		List<Etudiant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +" t").list();
+		List<Etudiant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Etudiant.class.getName() +" t").list();
 		return liste;
 	}
 
 	public Etudiant getById(int id) {
 		// TODO Auto-generated method stub
-		return (Etudiant) sessionFactory.getCurrentSession().get(Enseignant.class, id);
+		return (Etudiant) sessionFactory.getCurrentSession().get(Etudiant.class, id);
 	}
 
 }
