@@ -94,6 +94,7 @@ public class controllerDepartement {
 		
 		List<Colleges> colleges = serviceCollege.afficher();
 		view.addObject("colleges",colleges);
+		
 		List<Enseignant> responsables = serviceEnseignant.afficher();
 		view.addObject("responsables",responsables);
 		
