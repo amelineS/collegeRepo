@@ -15,12 +15,7 @@
 		<h1>Gestion des Utilisateurs</h1>
 	</div>
 	
-	<div class=pull-right>
-		<a href="<c:url value="/admin/home"/>" ><button class="btn btn-default" type="submit" style = "margin-top:10%">
-		<i class="glyphicon glyphicon-home"> Accueil</i></button></a>
-		<button class="btn btn-default" type="submit" style = "margin-top:10%">
-		<i class="glyphicon glyphicon-off"> Déconnexion</i></button>
-	</div>
+
 
 </nav>
 
