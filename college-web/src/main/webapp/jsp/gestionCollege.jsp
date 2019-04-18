@@ -26,10 +26,10 @@
 	</div>
 	
 	<div class=pull-right>
-		<a href="<c:url value="/admin/home"/>" ><button class="btn btn-default" type="submit" style = "margin-top:10%">
-		<i class="glyphicon glyphicon-home"> Accueil</i></button></a>
-		<button class="btn btn-default" type="submit" style = "margin-top:10%">
-		<i class="glyphicon glyphicon-off"> Déconnexion</i></button>
+		<a href="<c:url value="/admin/home"/>" ><button class="btn btn-default" type="submit">
+		<i class="glyphicon glyphicon-home" style ="font-size:large"> Accueil</i></button></a>
+		<button class="btn btn-default" type="submit">
+		<i class="glyphicon glyphicon-off" style ="font-size:large"> Déconnexion</i></button>
 	</div>
 
 </nav>
@@ -43,7 +43,7 @@
 <p><h1>Ajouter un collège</h1></p>
 
 <form:input path="idCollege" type = "hidden"/>
-Site internet : <form:input path="siteInternet" type = "text"/><br><br>
+Site internet : <form:input path="siteInternet" type = "text"  required="true"/><br><br>
 
 <form:button class="btn btn-primary" type ="submit" style = "margin-left:10%">Valider</form:button>
 

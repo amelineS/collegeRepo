@@ -55,7 +55,7 @@ public class PersonneMetier implements IPersonneMetier {
 		fs.setTel(p.getTel());
 		return fs;
 	}
-	
+
 	
 	
 }

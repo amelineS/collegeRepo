@@ -77,6 +77,8 @@
    	<bean id="daoSalle"  class="org.papaCollege.dao.SalleDAO" ></bean>
    <bean id="serviceSalle" name="serviceSalle" class="org.papaCollege.service.SalleMetier" ></bean>
    
+      	<bean id="daoAdmin"  class="org.papaCollege.dao.AdminDAO" ></bean>
+   <bean id="serviceAdmin" name="serviceAdmin" class="org.papaCollege.service.AdminMetier" ></bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	

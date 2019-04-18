@@ -59,11 +59,13 @@ public class DepartementMetier implements IDepartementMetier {
 		
 		for (Enseignant ens : dep.getEnseignants()) {
 
-			if(ens.getMatiere().getIdMatiere() != 0) {
+			if(ens.getMatiere() != null) {
+				if(!idMatieres.contains(ens.getMatiere().getIdMatiere())){
 				
 				idMatieres.add(ens.getMatiere().getIdMatiere());
 				sommeMoyenne += daoN.getMoyenneParMatiere(ens.getMatiere().getIdMatiere());
 			}	
+			}
 		}
 		
 		double moyenneDep = sommeMoyenne/idMatieres.size();
