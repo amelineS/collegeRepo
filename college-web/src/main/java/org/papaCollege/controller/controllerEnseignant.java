@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/admin")
 public class controllerEnseignant {
 	
+	//test
 	@Autowired
 	IGestionCollegeMetier<Enseignant> serviceEnseignant;
 	@Autowired
