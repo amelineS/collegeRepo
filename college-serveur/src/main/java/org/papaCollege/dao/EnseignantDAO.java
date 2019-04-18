@@ -32,7 +32,7 @@ public class EnseignantDAO implements IEnseignantDAO{
 
 	public List<Enseignant> afficher() {
 		// TODO Auto-generated method stub
-		List<Enseignant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +"t").list();
+		List<Enseignant> liste= sessionFactory.getCurrentSession().createQuery("select t from " + Enseignant.class.getName() +" t").list();
 		return liste;
 	}
 

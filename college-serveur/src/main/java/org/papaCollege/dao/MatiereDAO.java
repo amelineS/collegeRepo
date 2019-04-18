@@ -20,12 +20,12 @@ public class MatiereDAO implements IMatiereDAO {
 	}
 
 	public void modifier(Matiere t) {
-		sessionFactory.getCurrentSession().merge(t);
+		sessionFactory.getCurrentSession().update(t);
 		
 	}
 
 	public void supprimer(Matiere t) {
-		sessionFactory.getCurrentSession().merge(t);
+		sessionFactory.getCurrentSession().delete(t);
 		
 	}
 
@@ -35,7 +35,6 @@ public class MatiereDAO implements IMatiereDAO {
 	}
 
 	public Matiere getById(int id) {
-		// TODO Auto-generated method stub
 		return (Matiere) sessionFactory.getCurrentSession().get(Matiere.class, id);
 	}
 

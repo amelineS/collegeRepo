@@ -27,8 +27,8 @@ public class Departement {
 	@JoinColumn(name="idCollege")
 	private Colleges college;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	private Enseignant Responsable;
+	@OneToOne
+	private Enseignant responsable;
 	
 	
 	
@@ -61,10 +61,10 @@ public class Departement {
 		this.enseignants = enseignants;
 	}
 	public Enseignant getResponsable() {
-		return Responsable;
+		return responsable;
 	}
 	public void setResponsable(Enseignant responsable) {
-		Responsable = responsable;
+		this.responsable = responsable;
 	}
 
 
@@ -81,7 +81,7 @@ public class Departement {
 	@Override
 	public String toString() {
 		return "Departement [idDepartement=" + idDepartement + ", nomDepartement=" + nomDepartement + ", college="
-				+ college + ", Responsable=" + Responsable + "]";
+				+ college + ", Responsable=" + responsable + "]";
 	}
 
 	
