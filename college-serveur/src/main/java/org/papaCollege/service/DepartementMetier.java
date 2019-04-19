@@ -65,8 +65,8 @@ public class DepartementMetier implements IDepartementMetier {
 				idMatieres.add(ens.getMatiere().getIdMatiere());
 				sommeMoyenne += daoN.getMoyenneParMatiere(ens.getMatiere().getIdMatiere());
 			}	
-			}
 		}
+	}
 		
 		double moyenneDep = sommeMoyenne/idMatieres.size();
 		System.out.println("Somme finale "+sommeMoyenne+" Nombre final "+idMatieres.size());

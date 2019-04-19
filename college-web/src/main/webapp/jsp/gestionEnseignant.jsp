@@ -69,7 +69,10 @@
 		     		</div>
 		     		<div class="form-group"  style="width:40%">
 			     		<label for="mat">Matière</label>
-			   		    	<form:select  required="true" id="mat"  class="form-control col-md-3" path="Matiere.idMatiere" items="${listemat}"  itemValue="idMatiere" itemLabel="nom" ></form:select>	
+			   		    	<form:select  required="true" id="mat"  class="form-control col-md-3" 
+			   		    	path="Matiere.idMatiere" items="${listemat}"  itemValue="idMatiere" 
+			   		    	itemLabel="nom" >
+			   		    	</form:select>	
 		     		</div>
 		     	</div><br><br>
 		     	
