@@ -8,6 +8,7 @@ import org.papaCollege.dao.INoterDAO;
 import org.papaCollege.entities.Departement;
 import org.papaCollege.entities.Enseignant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +19,7 @@ public class DepartementMetier implements IDepartementMetier {
 	@Autowired
 	private IDepartementDAO daoD;
 	@Autowired
+	@Qualifier("daoNoter")
 	private INoterDAO daoN;
 
 	

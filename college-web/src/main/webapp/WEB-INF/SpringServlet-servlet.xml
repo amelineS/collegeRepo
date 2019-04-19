@@ -85,30 +85,25 @@
 	
 	<!-- SpringSecurity -->
 	
-	<!-- <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	<bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 		<constructor-arg value="12"></constructor-arg>
-	</bean> -->
+	</bean> 
 	
 	
-<!-- 	<security:http auto-config="false">
 	
-		<security:intercept-url pattern="/admin/*" access="ROLE_ADMIN" />
+	 <security:http auto-config="false" use-expressions="true" >
+	
+		<security:intercept-url pattern="/admin/*" access="hasAnyRole('ROLE_ADMIN')" />
 		
-		<security:form-login login-page="/login" default-target-url="/jsp/hello.jsp"/>
+		<security:intercept-url pattern="/user/*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+		
+		<security:form-login login-page="/login" /> 
 
-		<security:logout logout-success-url="/login" /> 
-		
-	</security:http> -->
-	
-	<!-- <security:http auto-config="false">
-	
-		<security:intercept-url pattern="/admin/*" access="ROLE_ADMIN" />
-		
-		<security:form-login login-page="/login" default-target-url="/jsp/hello.jsp"/>
-
-		<security:logout logout-success-url="/login" /> 
-		
+ 		<security:logout logout-success-url="/login" />  
 	</security:http>
+	
+	
+
 		
 	
 	<security:authentication-manager>
@@ -120,20 +115,7 @@
 		authorities-by-username-query="select u.userName, r.roleName from user u, role r  where u.ID_USER = r.ID_USER and u.userName =? " />
 		
 		</security:authentication-provider>
-	</security:authentication-manager> -->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	</security:authentication-manager> 
 	
 	
 </beans>

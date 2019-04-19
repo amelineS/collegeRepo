@@ -1,20 +1,16 @@
 package org.papaCollege.controller;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.papaCollege.dao.IEnseignantDAO;
 import org.papaCollege.dao.IGestionCollegeCRUD;
 import org.papaCollege.entities.Colleges;
 import org.papaCollege.entities.Departement;
 import org.papaCollege.entities.Enseignant;
 import org.papaCollege.service.IDepartementMetier;
-import org.papaCollege.service.IGestionCollegeMetier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,27 +20,26 @@ import org.springframework.web.servlet.ModelAndView;
 public class controllerDepartement {
 
 	@Autowired
-	private IDepartementMetier serviceDepartement;
+	 IDepartementMetier serviceDepartement;
 	@Autowired
-	IGestionCollegeMetier<Colleges> serviceCollege;
+	 IGestionCollegeCRUD<Colleges> serviceCollege;
 	@Autowired
-	private IGestionCollegeCRUD<Enseignant> serviceEnseignant;
+	 IGestionCollegeCRUD<Enseignant> serviceEnseignant;
 	
 	@RequestMapping("/Departement")
 	public ModelAndView addDepartement() {
 		
 		ModelAndView view = new ModelAndView("gestionDepartement","Departement", new Departement());
 		
-List <Colleges> listeColleges = serviceCollege.afficher();
+		List<Departement> Deps = serviceDepartement.afficher();
+		view.addObject("listeDepartements", Deps);
 		
-		view.addObject("colleges", listeColleges);
 		List<Enseignant> responsables =  serviceEnseignant.afficher();
 		view.addObject("responsables",responsables);
 		
-		List<Departement> Deps = new ArrayList<Departement>();
-		Deps=serviceDepartement.afficher();
+		List<Colleges> colleges = serviceCollege.afficher();
+		view.addObject("colleges",colleges);
 		
-		view.addObject("listeDepartements", Deps);
 		return view;
 	}
 
