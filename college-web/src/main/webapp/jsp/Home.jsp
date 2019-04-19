@@ -22,8 +22,11 @@
 	</div>
 	
 	<div class=pull-right>
+
+	<a href="<c:url value="/j_spring_security_logout"/>" >
 		<button class="btn btn-default" type="submit" style = "margin-top:10%">
 		<i class="glyphicon glyphicon-off" style ="font-size:large"> Déconnexion</i></button>
+		</a>
 	</div>
 </nav>
 

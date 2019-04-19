@@ -27,16 +27,25 @@ public class controllerAdmin {
 	@Autowired
 	private IAdminMetier serviceAdmin;
 	
-//	@RequestMapping(value = "/admin/home", method = RequestMethod.GET)
-//	public String homeAdmin( ) {
-//		return "Home";
-//	}
 	
 	
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public String AdminLogin() {
-//		return "authentif";
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String AdminLogin() {
+		return "authentif";
+	}
+	
+//	@RequestMapping("/admin/accueil")
+//	@RequestMapping("/accueil")
+//	public String accueiladmin(HttpServletRequest request) {
+//		System.out.println(request.getRemoteAddr());
+//		return "hello";
 //	}
+	
+	@RequestMapping("/user/home")
+	public String accueilUser(HttpServletRequest request) {
+		System.out.println(request.getRemoteAddr());
+		return "userHome";
+	}
 	
 	@RequestMapping("/formAdmin")
 	public ModelAndView formulaire() {
@@ -47,9 +56,9 @@ public class controllerAdmin {
 	
 	@RequestMapping("/addAdmin")
 	public ModelAndView ajout(@ModelAttribute("admin")User admin) {
-//		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder(12);
-//		System.out.println(admin.getPassword());
-//		admin.setPassword(encoder.encode(admin.getPassword()));
+		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder(12);
+		System.out.println(admin.getPassword());
+		admin.setPassword(encoder.encode(admin.getPassword()));
 		
 		serviceAdmin.ajouter(admin);
 		return new ModelAndView("redirect:/formAdmin");

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,11 +22,15 @@
 
 
 <form:form modelAttribute="admin" action="/college-web/addAdmin" style="margin-left:40%">
-<p><h1>Ajouter un utilisateur</h1></p>
+
 login : <form:input path="userName" type="text" style = "width:20%" class="form-control"/> <br>
 password : <form:input path="password" type="text" style = "width:20%" class="form-control"/> <br>
-activer : <form:checkbox value="1" path="actived" /><br>
-<form:button type="submit" class="btn btn-primary" style = "margin-left:10%" >Valider</form:button>
+activer : <form:checkbox value="1" path="actived" /><br><br>
+<form:button type="submit" class="btn btn-primary" style = "margin-left:6%" >Valider</form:button>
 </form:form>
+<br><br>
+<a href="<c:url value="/formRole"/>" style="margin-left:42%">Attribuer un role</a><br>
+<a href="<c:url value="/admin/home"/>" style="margin-left:42%">Authentification Admin</a><br>
+<a href="<c:url value="/user/home"/>" style="margin-left:42%">Authentification User</a><br>
 </body>
 </html>
