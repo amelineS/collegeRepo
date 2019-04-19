@@ -16,10 +16,12 @@
 			</div>
 	
 			<div class=pull-right>
-				<a href="<c:url value="/user/accueil"/>" ><button class="btn btn-default" type="submit" style = "margin-top:10%">
-				<i class="glyphicon glyphicon-home"> Accueil</i></button></a>
-				<button class="btn btn-default" type="submit" style = "margin-top:10%">
-				<i class="glyphicon glyphicon-off"> Déconnexion</i></button>
+				<a href="<c:url value="/user/home"/>" ><button class="btn btn-default" type="submit" style = "margin-top:10%">
+				<i class="glyphicon glyphicon-home" style ="font-size:large"> Accueil</i></button></a>
+					<a href="<c:url value="/j_spring_security_logout"/>" >
+		<button class="btn btn-default" type="submit" style = "margin-top:10%">
+		<i class="glyphicon glyphicon-off" style ="font-size:large"> Déconnexion</i></button>
+		</a>
 			</div>
 
 		</nav>
@@ -31,8 +33,8 @@
 			   		    	<form:select  required="true" id="dep"  class="form-control col-md-3" 
   			   		    	path="idDepartement" items="${departements}"  itemValue="idDepartement"   
  		   		    			itemLabel="nomDepartement">  
-		   		    	</form:select>	  
-		     		</div>
+		   		    	</form:select>	 
+		     		</div> <br>
  		     		<form:button  style="margin-left:5px" type="submit" class="btn btn-primary">Calculer</form:button> <br><br>
 				 <output style="margin-left:10%" id="moyenne" >${calculmoyenne}</output>
 			</form:form>

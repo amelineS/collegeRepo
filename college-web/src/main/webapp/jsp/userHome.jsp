@@ -41,7 +41,9 @@
 <th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-education"></i><br>
 <a href="<c:url value="/user/suivietudiant"/>" >Suivi Etudiant</a></th>
 <th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-folder-open"></i><br>
-<a href="<c:url value="/user/suivi"/>" >Suivi général</a></th>
+<a href="<c:url value="/user/suivi"/>" >Suivi département</a></th>
+<th scope = "col" style="text-align:center; padding:50px; font-size:x-large"><i class="glyphicon glyphicon-folder-open"></i><br>
+<a href="<c:url value="/user/suiviMat"/>" >Suivi matière</a></th>
 
 </tr>
 
